@@ -77,8 +77,11 @@ class OxfordUser:
         :return: list of definitions as strings
         '''
         obj = self.get_word_from_api(word_id)
-        subsenses = obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['subsenses'][0]
-        return subsenses['definitions']
+        try:
+            subsenses = obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['subsenses'][0]
+            return subsenses['definitions']
+        except:
+            return []
 
     def get_word_subsenses_examples(self, word_id: str):
         '''
@@ -88,8 +91,11 @@ class OxfordUser:
         '''
         
         obj = self.get_word_from_api(word_id)
-        subsenses = obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['subsenses'][0]
-        return [example['text'] for example in subsenses['examples']]
+        try:
+            subsenses = obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['subsenses'][0]
+            return [example['text'] for example in subsenses[word_id]]
+        except:
+            return []
 
     def get_word_etymologies(self, word_id: str):
         '''
@@ -169,5 +175,9 @@ class OxfordUser:
         examples = obj['results'][0]['lexicalEntries'][0]['text']
         return examples
 #test
-# new_user = OxfordUser("095b45f9", "9f1a4d772984fe91944ebd830eb961c4", "entries", "en-us")
+new_user = OxfordUser("095b45f9", "9f1a4d772984fe91944ebd830eb961c4", "entries", "en-us")
+# print(new_user.get_word_subsenses_examples('dog'))
+# print(new_user.get_word_synonyms('dog'))
+# print(new_user.get_word_pronunciations('dog'))
 # print(new_user.get_word_definitions('dog'))
+print(new_user.get_word_subsense_definitions('dog'))
