@@ -5,6 +5,7 @@ from color import *
 from entries import Entry
 from lemmas import *
 from sentences import *
+from search import *
 
 class OxfordUser:
     def __init__(self, app_id: str, app_key: str):
@@ -46,3 +47,10 @@ class OxfordUser:
         :return: Sentences object
         '''
         return Sentences(self.app_id, self.app_key, language_code, word_id, strict_match)
+
+    def get_search(self):
+        '''
+        Gets search from Oxford API.
+        :return: Search object
+        '''
+        return Search(self.app_id, self.app_key)
