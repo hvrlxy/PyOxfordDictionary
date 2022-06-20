@@ -21,7 +21,14 @@ class Lemma:
         return obj
 
     def get_word_inflections(self):
-        inflections = self.json_obj['results'][0]['lexicalEntries']
+        '''
+        Gets word inflections from lemma json object.
+        :return: list of inflections'''
+        inflections = None
+        try:
+            inflections = self.json_obj['results'][0]['lexicalEntries']
+        except:
+            return []
         inflections_list = []
         for inflection in inflections:
             if 'inflectionOf' in inflection:
