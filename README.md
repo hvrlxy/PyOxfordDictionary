@@ -48,7 +48,7 @@ The snippet of code below shows an example use case of the endpoint
 ```
 from PyOxfordDictionary.user import *
 >>> user = OxfordUser('<app_id>', '<app_key>')
->>> cat_entry = user.get_entries('cat', 'en') #initialize the entry object
+>>> cat_entry = user.get_entries(word_id = 'cat', language_code = 'en') #initialize the entry object
 >>> cat_entry.get_word_definitions()
 ['a small domesticated carnivorous mammal with soft fur, a short snout, and retractable claws. It is widely kept as a pet or for catching mice, and many breeds have been developed.']
 >>> cat_entry.get_word_synonyms()
