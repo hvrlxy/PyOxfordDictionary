@@ -67,6 +67,20 @@ The endpoint **lemma** is used to check whether a word exists in the given dicti
 []
 ```
 
+## Search
+The endpoint **search** is used to find possible translation and synonyms of a given word in the dictionary. This package supports 3 main functions:
+- get_headwords(): Find all possible headwords of the given strings
+- get_dictionary_match(): Use this to retrieve possible headword matches for a given string of text. The results are calculated using headword matching, fuzzy matching, and lemmatization.
+- get_thesaurus_match(): Use this to retrieve possible headword matches for a given string of text. The results are calculated using headword matching, fuzzy matching, and lemmatization.
+
+```
+>>> from PyOxfordDictionary.user import *
+>>> user = OxfordUser('<app_id>', '<app_key>')
+>>> cat_search = user.get_search()
+>>> cat_search.get_headwords(source_lang = 'en', target_lang = 'ar', word_id='computer', prefix = True, limit = 20)
+['computer', 'computer crime', 'computer dating', 'computer engineer', 'computer game', 'computer graphics', 'computer hacker', 'computer program', 'computer programmer', 'computer programming', 'computer science', 'computer scientist', 'computer studies', 'computer-aided design', 'computer-aided learning', 'computer-literate', 'computerize']
+```
+
 
 
 
