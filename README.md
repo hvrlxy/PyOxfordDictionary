@@ -9,7 +9,7 @@ https://test.pypi.org/project/PyOxfordDictionary/0.0.2/
 To download the package, type the line below into your Mac/Linux command line:
 
 ```
-ython3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps PyOxfordDictionary
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps PyOxfordDictionary
 ```
 
 ## Getting Started
