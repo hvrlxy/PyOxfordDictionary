@@ -1,7 +1,7 @@
 import json
 from matplotlib.ft2font import ITALIC
 import requests
-from color import *
+from PyOxfordDictionary.color import *
 from entries import Entry
 from lemmas import *
 from sentences import *

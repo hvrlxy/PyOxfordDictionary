@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: PyOxfordDictionary
-Version: 0.0.2
+Version: 0.0.3
 Summary: Python Wrapper for the Oxford Dictionary API
 Home-page: https://github.com/hvrlxy/PyOxfordDictionary
 Author: Ha Le
