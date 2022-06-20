@@ -1,0 +1,51 @@
+import json
+from matplotlib.ft2font import ITALIC
+import requests
+from color import *
+from entries import Entry
+from lemmas import *
+from sentences import *
+
+class OxfordUser:
+    def __init__(self, app_id: str, app_key: str):
+        '''
+        Initializes OxfordUser object.
+        :param app_id: Oxford API app_id
+        :param app_key: Oxford API app_key
+        :param endpoint: Oxford API endpoint
+        :param language_code: Oxford API language code
+        '''
+
+        self.app_id = app_id 
+        self.app_key = app_key
+
+
+    def get_entries(self, word_id: str, language_code: str):
+        '''
+        Gets entries from Oxford API.
+        :param word_id: string
+        :return: Entries object
+        '''
+        return Entry(self.app_id, self.app_key, word_id, language_code)
+
+    def get_lemma(self, word_id: str, language_code: str):
+        '''
+        Gets lemma from Oxford API.
+        :param language_code: string
+        :param word_id: string
+        :return: Lemma object
+        '''
+        return Lemma(self.app_id, self.app_key, language_code, word_id)
+
+    def get_sentences(self, word_id: str, language_code: str, strict_match: bool = False):
+        '''
+        Gets sentences from Oxford API.
+        :param language_code: string
+        :param word_id: string
+        :param strict_match: bool (default = False)
+        :return: Sentences object
+        '''
+        return Sentences(self.app_id, self.app_key, language_code, word_id, strict_match)
+
+new_user = OxfordUser('095b45f9', '360a7ad1815fa4837faf10ca532e0c2c')
+print(new_user.get_sentences('car', 'en', True).get_sentences())

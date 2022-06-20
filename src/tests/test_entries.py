@@ -1,7 +1,7 @@
 import pytest
-from PyOxfordDictionary.main import *
+from PyOxfordDictionary.user import *
 
-new_user = OxfordUser("095b45f9", "9f1a4d772984fe91944ebd830eb961c4", "entries", "en-us")
+new_user = OxfordUser("<app-id>", ",app-key>")
 
 def test_word_definitions():
     assert new_user.get_word_definitions('dog') == ['a domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, nonretractable claws, and a barking, howling, or whining voice.']
