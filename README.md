@@ -62,8 +62,12 @@ The endpoint **lemma** is used to check whether a word exists in the given dicti
 - get_word_inflections(): check a word exists in the dictionary and retrieve its root form
 
 ```
-
+>>> cat_lemma = user.get_lemma('en', 'cat')
+>>> cat_lemma.get_word_inflections()
+[]
 ```
+
+
 
 
 
