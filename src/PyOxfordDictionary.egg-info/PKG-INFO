@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: PyOxfordDictionary
+Version: 0.0.1
+Summary: Python Package that pulls information from the Oxford Dictionary API
+Home-page: https://github.com/hvrlxy/PyOxfordDictionary
+Author: Ha Le
+Author-email: le.ha1@northeastern.edu
+Project-URL: Bug Tracker, https://github.com/hvrlxy/PyOxfordDictionary/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyOxfordDictionary
+
+This is a Python package that allows developers to pull data from the Oxford Dictionary API.

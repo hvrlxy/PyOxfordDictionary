@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/PyOxfordDictionary/__init__.py
+src/PyOxfordDictionary/color.py
+src/PyOxfordDictionary/main.py
+src/PyOxfordDictionary.egg-info/PKG-INFO
+src/PyOxfordDictionary.egg-info/SOURCES.txt
+src/PyOxfordDictionary.egg-info/dependency_links.txt
+src/PyOxfordDictionary.egg-info/top_level.txt
