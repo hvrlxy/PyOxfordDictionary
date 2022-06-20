@@ -3,7 +3,7 @@
 This repository contains the Python Wrapper for the Oxford Dictionary API. The package is currently available for download in TestPyPi, and I will release the package on PyPi as soon as possible. To access the documentation of the package, click on the link below:
 
 ```
-https://test.pypi.org/project/PyOxfordDictionary/0.0.2/
+https://test.pypi.org/project/PyOxfordDictionary/0.0.8/
 ```
 
 To download the package, type the line below into your Mac/Linux command line:
@@ -101,3 +101,10 @@ The snippet of code below shows an example use case of the endpoint
 >>> cat_sentence.get_sentences()
 ['The laws were designed to prosecute people who hack into computers and steal information.', 'Patients will receive information through their computers on how to manage their disease.', 'The updated carriages also sport power sockets for notebook computers and other devices.', 'Participants scan the barcodes of every product they buy using a hand-held computer at home.', 'The four-page tabloids, little more than newsletters, materialized mainly because the editor used his personal computer at home.', 'I waited until a powerful laptop computer was under $1000 before buying it.', 'Clearly, not too many can afford to buy their own personal computers.', 'Perhaps the most compelling reason to buy a desktop computer is to get your choice of flat-panel displays.', 'Since then, the craft appears to have rebooted its own on-board computer more than 60 times.', 'The three desktop computers are connected to each other using Ethernet with a hub.', "I'd like to be able to access email remotely from the new notebook computer.", 'Such games hint at how best to program a quantum computer.', 'The missile was equipped with an autonomous inertial command structure and an on-board digital computer.', 'The group built the largest quantum computer ever, capable of factoring the number 15.', 'Early in his career, he pushed for the Smithsonian to purchase its first mainframe computer.', "But speed barriers, even in today's fast computers, are already an issue.", "Today's computers process data in the form of voltages representing 1s and 0s.", 'The use of hand-held computers varies widely in clinical practice.', "However, integrated graphics are the mainstay of today's office computers.", 'The worm attempts to copy itself to the Windows folder on networked computers with open shared drives.']
 ```
+
+## Utilities
+The endpoint contains different functionalities that help you to understand the API better. This package contains only 3 functions. For more information, read more at the official [API's main webpage](https://developer.oxforddictionaries.com/documentation#!/Search/get_search_translations_source_lang_search_target_lang_search).
+
+- get_domains_monolingual(): Returns a list of the available domains for a given monolingual language dataset.
+- get_domains_bilingual(): Returns a list of the available domains for a given bilingual language dataset.
+- get_all_languages(): Returns the names of monolingual and bilingual language datasets available in the API.

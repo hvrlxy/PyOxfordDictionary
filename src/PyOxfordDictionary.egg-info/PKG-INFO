@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: PyOxfordDictionary
-Version: 0.0.7
+Version: 0.0.8
 Summary: Python Wrapper for the Oxford Dictionary API
 Home-page: https://github.com/hvrlxy/PyOxfordDictionary
 Author: Ha Le
@@ -24,7 +24,7 @@ https://test.pypi.org/project/PyOxfordDictionary/0.0.2/
 To download the package, type the line below into your Mac/Linux command line:
 
 ```
-ython3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps PyOxfordDictionary
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps PyOxfordDictionary
 ```
 
 ## Getting Started
@@ -73,8 +73,11 @@ from PyOxfordDictionary.user import *
 ```
 
 ## Lemmas
-The endpoint **lemma** is used to check whether a word exists in the given dictionary and identify its root. This package only supports one function:
+The endpoint **lemma** is used to check whether a word exists in the given dictionary and identify its root. This package only supports one function. For more information, read more at the official [API's main webpage](https://developer.oxforddictionaries.com/documentation#!/Search/get_search_translations_source_lang_search_target_lang_search).
 - get_word_inflections(): check a word exists in the dictionary and retrieve its root form
+
+The snippet of code below shows an example use case of the endpoint
+
 
 ```
 >>> cat_lemma = user.get_lemma('en', 'cat')
@@ -82,10 +85,34 @@ The endpoint **lemma** is used to check whether a word exists in the given dicti
 []
 ```
 
+## Search
+The endpoint **search** is used to find possible translation and synonyms of a given word in the dictionary. This package supports 3 main functions. For more information, read more at the official [API's webpage](https://developer.oxforddictionaries.com/documentation#!/Search/get_search_translations_source_lang_search_target_lang_search).
+- get_headwords(): Find all possible headwords of the given strings
+- get_dictionary_match(): Use this to retrieve possible headword matches for a given string of text. The results are calculated using headword matching, fuzzy matching, and lemmatization.
+- get_thesaurus_match(): Use this to retrieve possible headword matches for a given string of text. The results are calculated using headword matching, fuzzy matching, and lemmatization.
+
+The snippet of code below shows an example use case of the endpoint
 
 
+```
+>>> from PyOxfordDictionary.user import *
+>>> user = OxfordUser('<app_id>', '<app_key>')
+>>> cat_search = user.get_search()
+>>> cat_search.get_headwords(source_lang = 'en', target_lang = 'ar', word_id='computer', prefix = True, limit = 20)
+['computer', 'computer crime', 'computer dating', 'computer engineer', 'computer game', 'computer graphics', 'computer hacker', 'computer program', 'computer programmer', 'computer programming', 'computer science', 'computer scientist', 'computer studies', 'computer-aided design', 'computer-aided learning', 'computer-literate', 'computerize']
+```
 
+## Sentences
+The endpoint **sentences** is used to retrieve example sentence usage of a given word. This package only support one function. For more information, read more at the official [API's main webpage](https://developer.oxforddictionaries.com/documentation#!/Search/get_search_translations_source_lang_search_target_lang_search).
 
+- get_sentences(): Use this to retrieve sentences extracted from a corpus of real-world language, including news and blog content. This is available for English and Spanish. For English, the sentences are linked to the correct sense of the word in the dictionary. In Spanish, they are linked at the headword level.
 
+The snippet of code below shows an example use case of the endpoint
 
-
+```
+>>> from PyOxfordDictionary.user import *
+>>> user = OxfordUser('<app_id>', '<app_key>')
+>>> cat_sentence = user.get_sentences(word_id = 'computer', language_code = 'en', strict_match = False)
+>>> cat_sentence.get_sentences()
+['The laws were designed to prosecute people who hack into computers and steal information.', 'Patients will receive information through their computers on how to manage their disease.', 'The updated carriages also sport power sockets for notebook computers and other devices.', 'Participants scan the barcodes of every product they buy using a hand-held computer at home.', 'The four-page tabloids, little more than newsletters, materialized mainly because the editor used his personal computer at home.', 'I waited until a powerful laptop computer was under $1000 before buying it.', 'Clearly, not too many can afford to buy their own personal computers.', 'Perhaps the most compelling reason to buy a desktop computer is to get your choice of flat-panel displays.', 'Since then, the craft appears to have rebooted its own on-board computer more than 60 times.', 'The three desktop computers are connected to each other using Ethernet with a hub.', "I'd like to be able to access email remotely from the new notebook computer.", 'Such games hint at how best to program a quantum computer.', 'The missile was equipped with an autonomous inertial command structure and an on-board digital computer.', 'The group built the largest quantum computer ever, capable of factoring the number 15.', 'Early in his career, he pushed for the Smithsonian to purchase its first mainframe computer.', "But speed barriers, even in today's fast computers, are already an issue.", "Today's computers process data in the form of voltages representing 1s and 0s.", 'The use of hand-held computers varies widely in clinical practice.', "However, integrated graphics are the mainstay of today's office computers.", 'The worm attempts to copy itself to the Windows folder on networked computers with open shared drives.']
+```
