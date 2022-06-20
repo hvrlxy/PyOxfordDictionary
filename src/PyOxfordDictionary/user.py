@@ -54,3 +54,10 @@ class OxfordUser:
         :return: Search object
         '''
         return Search(self.app_id, self.app_key)
+
+    def get_utility(self):
+        '''
+        Gets utility from Oxford API.
+        :return: Utility object
+        '''
+        return Utility(self.app_id, self.app_key)
