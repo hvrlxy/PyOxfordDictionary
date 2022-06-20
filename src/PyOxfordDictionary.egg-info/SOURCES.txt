@@ -4,7 +4,12 @@ pyproject.toml
 setup.cfg
 src/PyOxfordDictionary/__init__.py
 src/PyOxfordDictionary/color.py
-src/PyOxfordDictionary/main.py
+src/PyOxfordDictionary/entries.py
+src/PyOxfordDictionary/lemmas.py
+src/PyOxfordDictionary/search.py
+src/PyOxfordDictionary/sentences.py
+src/PyOxfordDictionary/user.py
+src/PyOxfordDictionary/utilities.py
 src/PyOxfordDictionary.egg-info/PKG-INFO
 src/PyOxfordDictionary.egg-info/SOURCES.txt
 src/PyOxfordDictionary.egg-info/dependency_links.txt

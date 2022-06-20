@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: PyOxfordDictionary
-Version: 0.0.1
-Summary: Python Package that pulls information from the Oxford Dictionary API
+Version: 0.0.2
+Summary: Python Wrapper for the Oxford Dictionary API
 Home-page: https://github.com/hvrlxy/PyOxfordDictionary
 Author: Ha Le
 Author-email: le.ha1@northeastern.edu
@@ -15,4 +15,4 @@ License-File: LICENSE
 
 # PyOxfordDictionary
 
-This is a Python package that allows developers to pull data from the Oxford Dictionary API.
+A Python Wrapper for the Oxford Dictionary API
