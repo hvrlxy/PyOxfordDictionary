@@ -30,7 +30,3 @@ class Sentences:
             sentences.append(sentence['text'])
 
         return sentences
-
-
-# sentences = Sentences('095b45f9', '360a7ad1815fa4837faf10ca532e0c2c', 'en', 'car')
-# print(sentences.get_sentences())

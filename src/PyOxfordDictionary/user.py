@@ -46,6 +46,3 @@ class OxfordUser:
         :return: Sentences object
         '''
         return Sentences(self.app_id, self.app_key, language_code, word_id, strict_match)
-
-new_user = OxfordUser('095b45f9', '360a7ad1815fa4837faf10ca532e0c2c')
-print(new_user.get_sentences('car', 'en', True).get_sentences())
