@@ -1,7 +1,7 @@
 import json
 from matplotlib.ft2font import ITALIC
 import requests
-from color import *
+from PyOxfordDictionary.color import *
 
 class Search:
     def __init__(self, app_id, app_key) -> None:

@@ -2,10 +2,10 @@ import json
 from matplotlib.ft2font import ITALIC
 import requests
 from PyOxfordDictionary.color import *
-from entries import Entry
-from lemmas import *
-from sentences import *
-from search import *
+from PyOxfordDictionary.entries import Entry
+from PyOxfordDictionary.lemmas import *
+from PyOxfordDictionary.sentences import *
+from PyOxfordDictionary.search import *
 
 class OxfordUser:
     def __init__(self, app_id: str, app_key: str):

@@ -1,7 +1,7 @@
 import json
 from matplotlib.ft2font import ITALIC
 import requests
-from color import *
+from PyOxfordDictionary.color import *
 
 class Sentences:
     def __init__(self, app_id, app_key, source_lang: str, word_id: str, strict_match = False):
